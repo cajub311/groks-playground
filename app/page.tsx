@@ -1,5 +1,7 @@
+'use client';
+
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowRight, RefreshCw, Send, Calendar, Sword, TrendingUp } from 'lucide-react';
 
 interface Message {
@@ -15,11 +17,10 @@ export default function GrokHub() {
   const [isThinking, setIsThinking] = useState(false);
   const [portfolioValue, setPortfolioValue] = useState(391.88);
   const [portfolioChange, setPortfolioChange] = useState(0.22);
-
-  // Wedding countdown (target: April 25, 2026)
   const [daysLeft, setDaysLeft] = useState(0);
 
-  React.useEffect(() => {
+  // Wedding countdown (target: April 25, 2026)
+  useEffect(() => {
     const targetDate = new Date('2026-04-25').getTime();
     const interval = setInterval(() => {
       const now = new Date().getTime();
